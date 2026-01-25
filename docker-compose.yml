@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  app:
+    container_name: ts-ci-cd-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ts-ci-cd-app:latest
+    restart: unless-stopped
+    command: node dist/index.js
